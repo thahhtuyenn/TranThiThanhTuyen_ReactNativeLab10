@@ -37,6 +37,7 @@ export const Screen02 = ({ route, navigation }) => {
     // const { bikes, fetchData, filterData} = useData({url});
     const bikes = useSelector((state) => state.bikes.value);;
     const dispatch = useDispatch();
+    const [action, setAction] = useState("");
 
     const handleClickItem = (item) => {
         navigation.navigate("Screen03", {item})
@@ -45,6 +46,10 @@ export const Screen02 = ({ route, navigation }) => {
     useEffect(() => {
         dispatch(fetchBikes())
     }, [])
+
+    // useEffect(() => {
+    //     dispatch(fetchBikes())
+    // }, [action])
 
     // useEffect(() => {
     //     filterData(category);
@@ -57,10 +62,15 @@ export const Screen02 = ({ route, navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1, marginHorizontal: 10 }}>
             <ScrollView horizontal={false} showsVerticalScrollIndicator={false}>
-                <View style={{ height: 100, justifyContent: 'center', alignItems: 'center' }}>
+                <View style={{ height: 100, justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row', marginHorizontal: 10}}>
                     <Text style={{ fontFamily: "Ubuntu", color: '#E94141', fontSize: 25, fontWeight: '400', width: "100%", textAlign: "left" }}>
                         The world’s Best Bike
                     </Text>
+
+                    <TouchableOpacity onPress={() => {navigation.navigate("ScreenAdd")}}
+                    style={{width: 100, height: 35, borderWidth: 1, borderColor: '#E9414187', justifyContent: 'center', alignItems: 'center', borderRadius: 5, marginHorizontal: 10 }}>
+                        <Text style={{fontFamily: 'Roboto', fontSize: 17, fontWeight: '700', color: '#E94141'}}>Add bike</Text>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={{ height: 60 }}>

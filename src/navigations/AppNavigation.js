@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Screen01 } from "../pages/Screen01";
 import { Screen02 } from "../pages/Screen02";
 import { Screen03 } from "../pages/Screen03";
+import { ScreenAdd } from "../pages/ScreenAdd";
 
 
 const Stack = createStackNavigator();
@@ -15,6 +16,7 @@ export const AppNavigation = () => {
                 <Stack.Screen name="Screen01" component={Screen01} />
                 <Stack.Screen name="Screen02" component={Screen02} />
                 <Stack.Screen name="Screen03" component={Screen03} />
+                <Stack.Screen name="ScreenAdd" component={ScreenAdd} />
             </Stack.Navigator>
         </NavigationContainer>
     );
