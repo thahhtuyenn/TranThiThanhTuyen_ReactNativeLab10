@@ -45,7 +45,8 @@ export const ScreenAdd = ({ route, navigation }) => {
 
     hanldClickAdd = () => {
         if(bikeAdd.name !== "" && bikeAdd.image !== "" && bikeAdd.price > 0 && bikeAdd.categoryName !== ""){
-            dispatch(addBike(bikeAdd));
+            dispatch(addBike({ body: bikeAdd }));
+            navigation.navigate("Screen02")
         }
     }
 
