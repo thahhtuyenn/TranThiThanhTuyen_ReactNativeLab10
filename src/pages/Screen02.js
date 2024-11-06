@@ -5,6 +5,8 @@ import { ScrollView } from "react-native";
 import { Image } from "react-native";
 import { Item } from "../components/Item";
 import { useData } from "../hook/useData";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBikes } from "../reduxToolkit/slice";
 
 const dataCategories = [
     {
@@ -31,20 +33,26 @@ const dataCategories = [
 
 export const Screen02 = ({ route, navigation }) => {
     const [category, setCategory] = useState(dataCategories[0]);
-    const url = "https://67065011a0e04071d226501a.mockapi.io/bikes";
-    const { bikes, fetchData, filterData} = useData({url});
+    // const url = "https://66f38c9f71c84d8058790dec.mockapi.io/bikes";
+    // const { bikes, fetchData, filterData} = useData({url});
+    const bikes = useSelector((state) => state.bikes.value);;
+    const dispatch = useDispatch();
 
     const handleClickItem = (item) => {
         navigation.navigate("Screen03", {item})
     }
 
     useEffect(() => {
-        filterData(category);
-    }, []);
+        dispatch(fetchBikes())
+    }, [])
 
-    useEffect(() => {
-        filterData(category);
-    }, [category]);
+    // useEffect(() => {
+    //     filterData(category);
+    // }, []);
+
+    // useEffect(() => {
+    //     filterData(category);
+    // }, [category]);
 
     return (
         <SafeAreaView style={{ flex: 1, marginHorizontal: 10 }}>

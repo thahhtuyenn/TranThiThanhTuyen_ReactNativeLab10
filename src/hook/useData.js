@@ -19,7 +19,7 @@ export const useData = ({url}) => {
         if (category.name === "All") {
             fetchData();
         } else {
-            axios.get(`${url}?type=${category.name}`)
+            axios.get(`${url}?categoryName=${category.name}`)
             .then((response) => {
                 setBikes(response.data);
             })
