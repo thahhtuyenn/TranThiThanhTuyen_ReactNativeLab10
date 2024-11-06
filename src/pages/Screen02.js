@@ -6,7 +6,7 @@ import { Image } from "react-native";
 import { Item } from "../components/Item";
 import { useData } from "../hook/useData";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchBikes } from "../reduxToolkit/slice";
+import { fetchBikes, filterBikes } from "../reduxToolkit/slice";
 
 const dataCategories = [
     {
@@ -40,12 +40,20 @@ export const Screen02 = ({ route, navigation }) => {
     const [action, setAction] = useState("");
 
     const handleClickItem = (item) => {
-        navigation.navigate("Screen03", {item})
+        navigation.navigate("Screen03", {item: item})
     }
 
     useEffect(() => {
         dispatch(fetchBikes())
     }, [])
+
+    useEffect(() => {
+        if(category.name === "All"){
+            dispatch(fetchBikes())
+        }else{
+            dispatch(filterBikes(category.name))
+        }
+    }, [category])
 
     // useEffect(() => {
     //     dispatch(fetchBikes())
