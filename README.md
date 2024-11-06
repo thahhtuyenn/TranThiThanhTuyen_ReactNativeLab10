@@ -18,7 +18,7 @@ Start project lab 10 sau khi mở thư mục ReactNativeLab10 với lệnh
 - Khi nhấn vào bất kỳ sản phẩm nào, màn hình sẽ hiển thị thông tin chi tiết của sản phẩm đó ra màn hình.
 - Khi đang ở trang danh sách các sản phẩm, nhán 'Add bike' để thêm 1 sản phẩm mới vào danh sách, màn hình chuyển sang trang Add và người dùng có thể điền các thông tin cần thiết vào các ô input sau đó nhấn nút ADD.
 ### Demo 
-![Demo](https://github.com/thahhtuyenn/TranThiThanhTuyen_ReactNative/blob/main/ReactNativeLab08/assets/demo/demo-reactnative-tuan8.gif)
+![Demo](https://github.com/thahhtuyenn/TranThiThanhTuyen_ReactNativeLab10/blob/main/assets/demo/demo-reactnative-tuan10.gif)
 Hoặc nhấn vào đây: [Demo tuần 10](https://youtu.be/ji5xVg70Ako)
 ## Tác giả, liên hệ
 
